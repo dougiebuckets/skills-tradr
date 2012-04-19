@@ -1,0 +1,38 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+  
+  <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div>
+
+   <div><%= f.label :location %><br />
+  <%= f.text_field :location %></div>
+
+ 
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <input type="text" name="place[loc][lat]" id="place_loc_lat">
+
+
+  <h3>Skills</h3>
+
+  <input type="text" name="place[skills][desired]" id="skills_skills_desired">
+
+
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "links" %>
