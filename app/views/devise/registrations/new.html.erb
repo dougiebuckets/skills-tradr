@@ -22,7 +22,25 @@
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
- 
+  <h3>My Skills</h3>
+  <%= f.fields_for :my_skills do |builder| %>
+  <p>
+  <%= builder.label :name, "Skill" %><br />
+  <%= builder.text_area :name, :rows => 1 %><br />
+    <%= builder.text_area :name, :rows => 1 %><br />
+
+  <% end %>
+
+  <h3>Desired Skills</h3>
+  <%= f.fields_for :wanted_skills do |builder| %>
+  <p>
+  <%= builder.label :name, "Skill" %><br />
+  <%= builder.text_area :name, :rows => 1 %><br />
+    <%= builder.text_area :name, :rows => 1 %><br />
+    <% end %>
+  
+</p>
+
 
 
 

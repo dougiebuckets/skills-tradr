@@ -1,7 +1,8 @@
 class User
   include Mongoid::Document
 
-  has_many :skills
+  embeds_many :wanted_skills
+  embeds_many :my_skills
   accepts_nested_attributes_for :skills
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
