@@ -1,5 +1,8 @@
 class User
   include Mongoid::Document
+
+  has_many :skills
+  accepts_nested_attributes_for :skills
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -29,12 +32,14 @@ class User
   field :first_name
   field :last_name
  
-  field :location
+  field :address
+
+  #geocoded_by :address  
+  #after_validation :geocode    
+  #field :coordinates, :type => Array
 
 
-  index([[:skills, :desired]], :background => true)
-
-  validates_presence_of :first_name, :last_name,  :location
+  validates_presence_of :first_name, :last_name,  :address, :has_skills
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,  :location
   ## Encryptable
@@ -71,24 +76,4 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
 
-
-  embeds_one :skills
-  embeds_one :loc
 end
-  class Skills
-  include Mongoid::Document
-
-    field :skills, type => String
-    field :desired, type => String
-
-    embedded_in :user 
-  end 
-
-  class Loc
-  include Mongoid::Document
-
-  field :lat, :type => Integer
-  field :lon, :type => Integer
-
-  embedded_in :user
-  end
