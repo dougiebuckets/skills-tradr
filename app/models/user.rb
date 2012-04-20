@@ -3,7 +3,7 @@ class User
 
   embeds_many :wanted_skills
   embeds_many :my_skills
-  accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :wanted_skills, :my_skills
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
