@@ -1,5 +1,9 @@
 SkillsTradr::Application.routes.draw do
 
+  get "matchmaker/index"
+
+  get "matchmaker/show"
+
 root :to => "home#index"
 
 

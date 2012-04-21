@@ -1,0 +1,24 @@
+<h3>Home</h3>
+<% @Users.each do |user| %>
+  <p>User First Name: <%= user.first_name %> </p>
+  <p>User Last Name:  <%= user.last_name %> </p>
+  <p>Address:  <%= user.address %> </p>
+  <p>Coordinates:  <%= user.to_coordinates %> </p>
+
+
+
+<% user.my_skills.each do |skill| %>
+ 	<p>Skill:<%= skill.name %></p>
+      <% end %>  
+<% user.wanted_skills.each do |dskill| %>
+ 	<p>Desired Skill:<%= dskill.sname %></p>
+      <% end %>  
+
+
+
+  </ br>
+<% end %>
+
+<h3>Currrent User </h3>
+
+<p>Hello <%= @User.first_name %>
