@@ -11,6 +11,8 @@ gem "devise", "~> 2.0.4"
 
 gem 'geocoder'
 
+gem 'mongoid_spacial'
+
 
 gem 'rails', '3.2.3'
 
