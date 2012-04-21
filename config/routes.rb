@@ -1,17 +1,10 @@
 SkillsTradr::Application.routes.draw do
-  get "users/index"
-
-  get "users/show"
-
-  get "users/edit"
-
-  get "users/new"
 
 root :to => "home#index"
 
 
-  devise_for :users
-  resources :users
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

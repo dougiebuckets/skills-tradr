@@ -4,6 +4,9 @@
 <%= simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 <form>
+
+
+
   <div><%= f.label :first_name %><br />
   <%= f.text_field :first_name %></div>
   
@@ -11,11 +14,14 @@
 
   <div><%= f.label :last_name %><br />
   <%= f.text_field :last_name %></div>
+<%= f.fields_for :locations do |builder| %>
 
-   <div><%= f.label :address %><br />
-  <%= f.text_field :address %></div>
-
+<%= builder.label :address %><br />
+<%= builder.text_field :address %><br />
+<%= builder.link_to_remove "cx" %>
+<% end %>
  
+
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
