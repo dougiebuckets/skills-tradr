@@ -3,8 +3,8 @@ class User
 
   embeds_many :wanted_skills
   embeds_many :my_skills
-  accepts_nested_attributes_for :my_skills
-  attr_accessible :my_skills
+  accepts_nested_attributes_for :my_skills, :wanted_skills
+  attr_accessible :my_skills, :wanted_skills
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -41,7 +41,7 @@ class User
   #field :coordinates, :type => Array
 
 
-  validates_presence_of :first_name, :last_name,  :address, :has_skills
+  validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,  :location
   ## Encryptable

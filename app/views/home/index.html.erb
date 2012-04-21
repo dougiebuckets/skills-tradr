@@ -2,8 +2,17 @@
 <% @users.each do |user| %>
   <p>User First Name: <%= user.first_name %> </p>
   <p>User Last Name:  <%= user.last_name %> </p>
-  
+
+
+<% user.my_skills.each do |skill| %>
+ 	<a>Skills:<%= skill.name %></a>
+      <% end %> 
+       
+<% user.wanted_skills.each do |dskill| %>
+ 	<a><%= dskill.sname %></a>
+      <% end %>  
 
 
   </ br>
 <% end %>
+
