@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
   include Geocoder::Model::Mongoid
+  include Mongoid::Paperclip
+
 
 
   embeds_many :wanted_skills
@@ -46,11 +48,12 @@ class User
   #geocoded_by :address  
   #after_validation :geocode    
   #field :coordinates, :type => Array
+  has_mongoid_attached_file :avatar
 
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :wanted_skills_attributes, :name, :sname
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :avatar, :wanted_skills_attributes, :name, :sname
   ## Encryptable
   # field :password_salt, :type => String
 

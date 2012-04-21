@@ -40,6 +40,9 @@ gem "zurb-foundation", :group => :assets
 
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'simple_form'
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+#will activate later 
+#gem "aws-s3",            :require => "aws/s3"
 
 
 

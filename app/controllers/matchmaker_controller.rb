@@ -6,6 +6,7 @@ class MatchmakerController < ApplicationController
   	#@Users = User.all.where(:coordinates.near => [[-73.98, 40.77],2])
 
 
+
   	
   	  
 
