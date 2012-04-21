@@ -2,7 +2,7 @@
 <% @users.each do |user| %>
   <p>User First Name: <%= user.first_name %> </p>
   <p>User Last Name:  <%= user.last_name %> </p>
-
+<p> <%= user.my_skills.inspect %> </p>
 
 
 
@@ -14,14 +14,7 @@
  	<a><%= dskill.sname %></a>
       <% end %>  
 
-<ol>  
-  <% for my_skills in user %>  
-  <li><%= h my_skills.name %></li>  
-  <ul>  
-     
-  </ul>  
-  <% end %>  
-</ol>  
+
 
   </ br>
 <% end %>

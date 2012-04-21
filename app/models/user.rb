@@ -3,8 +3,10 @@ class User
 
   embeds_many :wanted_skills
   embeds_many :my_skills
-  accepts_nested_attributes_for :my_skills, :wanted_skills
-  attr_accessible :my_skills, :wanted_skills
+  accepts_nested_attributes_for :my_skills, allow_destroy: true
+  accepts_nested_attributes_for :wanted_skills, allow_destroy: true
+
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -43,7 +45,7 @@ class User
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,  :location
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address,  :location, :my_skills_attributes, :wanted_skills_attributes, :name, :sname
   ## Encryptable
   # field :password_salt, :type => String
 
