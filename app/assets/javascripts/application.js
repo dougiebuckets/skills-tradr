@@ -15,4 +15,6 @@
 //= require foundation
 //= require_tree .
 //= require "foundation"
+//= require jquery_nested_form
+
 

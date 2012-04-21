@@ -1,6 +1,7 @@
 <h2>Sign up</h2>
+<%= javascript_include_tag :defaults, "nested_form" %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :first_name %><br />
@@ -22,27 +23,13 @@
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
-  <h3>My Skills</h3>
-  <%= f.fields_for :my_skills do |builder| %>
-  <p>
-  <%= builder.label :name, "Skill" %><br />
-  <%= builder.text_area :name, :rows => 1 %><br />
-    <%= builder.text_area :name, :rows => 1 %><br />
-
-  <% end %>
-
-  <h3>Desired Skills</h3>
-  <%= f.fields_for :wanted_skills do |builder| %>
-  <p>
-  <%= builder.label :name, "Skill" %><br />
-  <%= builder.text_area :name, :rows => 1 %><br />
-    <%= builder.text_area :name, :rows => 1 %><br />
-    <% end %>
   
-</p>
-
-
-
+<%= f.fields_for :my_skills do |task| %>
+<%= task.label :name %><br />
+<%= task.text_field :name %><br />
+<%= task.link_to_remove "Remove this task" %>
+<% end %>
+<p><%= f.link_to_add "Add a task", :my_skills %></p>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

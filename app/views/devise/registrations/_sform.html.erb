@@ -1,0 +1,9 @@
+
+
+<h3> Tasks</h3>
+<%= f.fields_for :my_skills do |task| %>
+<%= task.label :name %><br />
+<%= task.text_field :name %><br />
+<%= task.link_to_remove "Remove this task" %>
+<% end %>
+<p><%= f.link_to_add "Add a task", :my_skills %></p>
