@@ -14,13 +14,9 @@
 
   <div><%= f.label :last_name %><br />
   <%= f.text_field :last_name %></div>
-<%= f.fields_for :locations do |builder| %>
 
-<%= builder.label :address %><br />
-<%= builder.text_field :address %><br />
-<%= builder.link_to_remove "cx" %>
-<% end %>
- 
+  <div><%= f.label :address %><br />
+  <%= f.text_field :address %></div>
 
 
   <div><%= f.label :email %><br />

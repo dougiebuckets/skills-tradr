@@ -1,12 +1,12 @@
 class User
   include Mongoid::Document
+  include Geocoder::Model::Mongoid
+
 
   embeds_many :wanted_skills
   embeds_many :my_skills
-  embeds_one :location
   accepts_nested_attributes_for :my_skills, allow_destroy: true
   accepts_nested_attributes_for :wanted_skills, allow_destroy: true
-  accepts_nested_attributes_for :location, allow_destroy: true
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -36,8 +36,13 @@ class User
 
   field :first_name
   field :last_name
- 
+  field :address 
 
+  field :coordinates, :type => Array
+
+  geocoded_by :address              
+  
+  after_validation :geocode 
   #geocoded_by :address  
   #after_validation :geocode    
   #field :coordinates, :type => Array
@@ -45,7 +50,7 @@ class User
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address,  :locations,:locations_attributes, :my_skills_attributes, :coordinates, :wanted_skills_attributes, :name, :sname
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :wanted_skills_attributes, :name, :sname
   ## Encryptable
   # field :password_salt, :type => String
 
