@@ -36,7 +36,7 @@ end
 
 gem 'jquery-rails'
 
-gem "zurb-foundation", :group => :assets
+gem "twitter-bootstrap-rails"
 
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'simple_form'

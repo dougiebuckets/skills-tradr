@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require twitter/bootstrap
 //= require_tree .
-//= require "foundation"
 //= require jquery_nested_form
 
 
