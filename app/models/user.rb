@@ -54,7 +54,7 @@ class User
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :avatar, :wanted_skills_attributes, :name, :sname, :fact
+  attr_accessible :first_name, :last_name, :reverse_geocode, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :avatar, :wanted_skills_attributes, :name, :sname, :fact
   ## Encryptable
   # field :password_salt, :type => String
 
@@ -64,8 +64,8 @@ class User
   #after_validation :fetch_coordinates
   #after_validation :set_label
 
-  #reverse_geocoded_by :latitude, :longitude
-  #after_validation :fetch_address
+reverse_geocoded_by :coordinates
+after_validation :reverse_geocode
 
 
 ##this will reverse so it will shorten from the address just to city
