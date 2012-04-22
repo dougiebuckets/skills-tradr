@@ -38,6 +38,7 @@ class User
 
   field :first_name
   field :last_name
+  field :fact
   field :address 
 
   field :coordinates, :type => Array
@@ -53,7 +54,7 @@ class User
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, :last_name, :email, :case_sensitive => false
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :avatar, :wanted_skills_attributes, :name, :sname
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :address, :coordinates, :my_skills_attributes, :coordinates, :avatar, :wanted_skills_attributes, :name, :sname, :fact
   ## Encryptable
   # field :password_salt, :type => String
 

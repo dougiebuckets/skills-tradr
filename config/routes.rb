@@ -1,5 +1,7 @@
 SkillsTradr::Application.routes.draw do
 
+  get "profile/me"
+
   get "matchmaker/index"
 
   get "matchmaker/show"

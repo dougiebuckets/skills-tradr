@@ -7,7 +7,7 @@
 
 
   <%= f.file_field :avatar %>
-  
+
   <div><%= f.label :first_name %><br />
   <%= f.text_field :first_name %></div>
   
@@ -28,21 +28,22 @@
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
-  
+  <h3>Your Skills</h3>
 <%= f.fields_for :my_skills do |task| %>
-<%= task.label :name %><br />
+<%= task.label "Skills" %><br />
 <%= task.text_field :name %><br />
-<%= task.link_to_remove "Remove this task" %>
+<%= task.link_to_remove "Remove this skill" %>
 <% end %>
-<p><%= f.link_to_add "Add a task", :my_skills %></p>
+<p><%= f.link_to_add "Add a skill", :my_skills %></p>
 
+  <h3>Desired Skills</h3>
 
 <%= f.fields_for :wanted_skills do |task| %>
-<%= task.label :sname %><br />
+<%= task.label "Desired Skills" %><br />
 <%= task.text_field :sname %><br />
-<%= task.link_to_remove "Remove this task" %>
+<%= task.link_to_remove "Remove this skill" %>
 <% end %>
-<p><%= f.link_to_add "Add a task", :wanted_skills %></p>
+<p><%= f.link_to_add "Add a skill", :wanted_skills %></p>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 </form>

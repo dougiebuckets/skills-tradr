@@ -19,28 +19,46 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Some Store</a>
+        <a class="brand" href="#">SkillsTradR</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Home" %></li>
+            <li><%= link_to "Home", root_url %></li>
             <li><%= link_to "About Us" %></li>
             <li><%= link_to "Contact Us" %></li>
-            <li><%= link_to "Profile" %></li>
+            <li><%= link_to "Profile", profile_me_path %></li>
+            <li><%= link_to "Matches", matchmaker_index_path %></li> 
           </ul>
+
+          <ul class="nav pull-right">
+          	 <% if user_signed_in? %>
+            	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            	<% else %>
+  				<li><%= link_to "Sign up", new_user_registration_path %></li>  
+  				<li><%= link_to "Sign in", new_user_session_path %></li>
+
+            	<% end %>
+
+          	<li class = "divider-vertical"></li>
+          	<li class = "dropdown">
+          		<a href = "#" class = "dropdown-toggle" data-toggle = "dropdown"></a>
+
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+
         </div>
+
       </div>
+
+        
     </div>
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
-        <h2>About Us</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
+     <%= yield %>
+      
     </div>
-  </div>
+ 
   <% if user_signed_in? %>
   <div>Signed in as... <%= current_user.email %></div>
 <% end %>
