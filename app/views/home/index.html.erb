@@ -2,9 +2,10 @@
 	<h1>Say hello to our fantastical traders!</h1>
 </div>
 
-<div class = "row">
 
 <% @users.each do |user| %>
+<div class = "row">
+
 <div class = "span2">
      <%= image_tag user.avatar.url %>
 </div>
@@ -33,4 +34,5 @@
 
 
 </div>
+<hr class = "soften">
 <% end %>

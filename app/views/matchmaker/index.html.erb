@@ -2,9 +2,10 @@
 	<h1>Here are your matches</h1>
 </div>
 
-<div class = "row">
+
 
 <% @Users.each do |user| %>
+<div class = "row">
 <div class = "span2">
      <%= image_tag user.avatar.url %>
 </div>
@@ -34,6 +35,7 @@
 </div>
 
 
-  </ br>
 </div>
+
 <% end %>
+
