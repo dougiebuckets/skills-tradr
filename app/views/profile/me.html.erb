@@ -1,0 +1,47 @@
+
+<div class="container-fluid">
+
+  <div class="row-fluid">
+    <div class="span2" style = "float: right;">
+    <!--Sidebar content-->
+      <h2>My Picture:</h2>
+
+     <%= image_tag @User.avatar.url %>
+      
+   <h3>Interesting Fact:</h3>
+   <p>I like to take long walks on the beach</p>
+   
+      <h3>Location: <%= @city + "," +@state %></h3>
+
+   <iframe width="200" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Syracuse,+NY&amp;aq=0&amp;oq=syracus&amp;sll=37.0625,-95.677068&amp;sspn=40.27343,53.261719&amp;ie=UTF8&amp;hq=&amp;hnear=Syracuse,+Onondaga,+New+York&amp;t=m&amp;ll=43.048067,-76.14727&amp;spn=0.050179,0.068321&amp;z=12&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Syracuse,+NY&amp;aq=0&amp;oq=syracus&amp;sll=37.0625,-95.677068&amp;sspn=40.27343,53.261719&amp;ie=UTF8&amp;hq=&amp;hnear=Syracuse,+Onondaga,+New+York&amp;t=m&amp;ll=43.048067,-76.14727&amp;spn=0.050179,0.068321&amp;z=12&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+    </div>
+    <div class="span10">
+    
+    <div class="row-fluid">
+    <div class="row-fluid">
+      <div class="span10"></div>
+      <h2>Hello, my name is <%= @User.first_name %> and I know how to</h2>
+      
+      	<div class ="skills"
+
+
+
+
+    <ol>		
+       <% @User.my_skills.each do |skill| %>
+          <li><%= skill.name %></li>
+      <% end %>  
+    
+    </ol>
+    <h2>I'm interested in learning how to</h2>
+      	<div class ="skills"
+    <ol>		
+      <% @User.wanted_skills.each do |skill| %>
+          <li><%= skill.sname %></li>
+      <% end %>  
+    </ol>
+
+      <div class="span4"</div>
+		</div>
+      
+    </div>

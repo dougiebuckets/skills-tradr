@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-SkillsTradr::Application.config.secret_token = 'f5ff3649a8d1ca08f21a5822a958164bf79ec68333b80b025c991c8c3697d5919d68a2dbafef58c0bd86e04f7452363ecb0452033908cd0a5f09a9e7193c6db3'
+SkillsTradr::Application.config.secret_token = '64901ace25b27bcae2f95bbad115f985e4ddf7b7e31e8daf95a841a241e458dad64870912310a6cc4f7528716ed767e3a2093ad00b2ffa73d3e5c912921f0f55'

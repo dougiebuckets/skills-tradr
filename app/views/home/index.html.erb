@@ -1,0 +1,38 @@
+<div class ="page-header">
+	<h1>Say hello to our fantastical traders!</h1>
+</div>
+
+
+<% @users.each do |user| %>
+<div class = "row">
+
+<div class = "span2">
+     <%= image_tag user.avatar.url %>
+</div>
+<div class ="span4"
+  <p>User First Name: <%= user.first_name %> </p>
+  <p>User Last Name:  <%= user.last_name %> </p>
+  <p>Address:  <%= user.address %> </p>
+  <p>Coordinates:  <%= user.to_coordinates %> </p>
+</div>
+
+<div class = "span2">
+	<h3>Skills</h3>
+
+<% user.my_skills.each do |skill| %>
+ 	<p><%= skill.name %></p>
+      <% end %>  
+  </div>
+
+  <div class = "span2">
+  	<h3>Desired Skills</h3>
+<% user.wanted_skills.each do |dskill| %>
+ 	<p><%= dskill.sname %></p>
+      <% end %>  
+</div>
+
+
+
+</div>
+<hr class = "soften">
+<% end %>

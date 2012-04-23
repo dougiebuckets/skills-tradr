@@ -14,6 +14,14 @@ SkillsTradr::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
+  config.action_mailer.default_url_options = { :host => 'yourhost.com' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 

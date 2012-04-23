@@ -3,11 +3,14 @@ require File.expand_path('../boot', __FILE__)
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
+<<<<<<< HEAD
 require "rails/test_unit/railtie"
 
 # require 'rails/all'
 
 
+=======
+>>>>>>> 968ca0440012ce950b627fe900bd0626af93cfbe
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -63,7 +66,7 @@ module SkillsTradr
     # This will create an empty whitelist of attributes available for mass-assignment for all models
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
-    # config.active_record.whitelist_attributes = true
+    #config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
     config.assets.enabled = true
